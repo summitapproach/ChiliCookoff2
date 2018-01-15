@@ -8,19 +8,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var platform_browser_1 = require("@angular/platform-browser");
 var core_1 = require("@angular/core");
+var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
+var http_1 = require("@angular/common/http");
 var app_component_1 = require("./app.component");
+var my_parties_component_1 = require("./my-parties.component");
+var chili_cookoff_service_1 = require("./chili-cookoff.service");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             declarations: [
-                app_component_1.AppComponent
+                app_component_1.AppComponent,
+                my_parties_component_1.MyPartiesComponent
             ],
             imports: [
-                platform_browser_1.BrowserModule
+                ng_bootstrap_1.NgbModule.forRoot(),
+                platform_browser_1.BrowserModule,
+                http_1.HttpClientModule
             ],
-            providers: [],
+            providers: [chili_cookoff_service_1.ChiliCookoffService],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
